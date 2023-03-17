@@ -12,6 +12,9 @@
         android:theme="@style/Theme.WeCare"
         tools:targetApi="31">
         <activity
+            android:name=".EmergencyContacts"
+            android:exported="false" />
+        <activity
             android:name=".UserDetails"
             android:exported="false" />
         <activity

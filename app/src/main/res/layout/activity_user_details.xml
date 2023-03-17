@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your Name"
+
             android:background="@drawable/edittext_bg_color"
             android:gravity="center"
             android:layout_margin="20dp"

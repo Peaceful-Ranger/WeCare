@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#A9D2E4"
+    tools:context=".EmergencyContacts">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Enter Your Emergency Contacts"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="maximum 3"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:layout_margin="20dp"/>
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number Contact 1"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_margin="30dp"
+        android:id="@+id/EC1Mobile"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Relation"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/EC1Relation"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_margin="20dp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number Contact 2"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_margin="30dp"
+        android:id="@+id/EC2Mobile"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Relation"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/EC2Relation"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_margin="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number Contact 1"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_margin="30dp"
+        android:id="@+id/EC3Mobile"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Relation"
+        android:gravity="center"
+        android:background="#EBE6BD"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/EC3Relation"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_margin="20dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Save and Next"
+        android:textSize="15dp"
+        android:clickable="true"
+        android:textColor="#000"
+        android:id="@+id/saveContinueBtn"/>
+
+
+
+
+
+
+
+
+</LinearLayout>
