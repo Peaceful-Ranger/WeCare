@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Authentication extends AppCompatActivity {
-    TextView register;
+public class SignUpActivity extends AppCompatActivity {
+    TextView Login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentication);
+        setContentView(R.layout.activity_sign_up);
 
-        register = findViewById(R.id.txtRegister);
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Login = findViewById(R.id.txtLogin);
 
+        Intent intent = new Intent(getApplicationContext(), Authentication.class);
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,8 +24,6 @@ public class Authentication extends AppCompatActivity {
                 finish();
             }
         };
-        register.setOnClickListener(onClickListener);
+        Login.setOnClickListener(onClickListener);
     }
-
-
 }
