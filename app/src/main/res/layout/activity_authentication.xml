@@ -13,11 +13,12 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        app:cardElevation="10dp"
+        app:cardElevation="25dp"
         android:backgroundTint="@color/purple_200"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:cardCornerRadius="25dp"
+        app:cardCornerRadius="40dp"
+        app:cardUseCompatPadding="true"
         android:layout_height="wrap_content">
 
 
@@ -57,7 +58,7 @@
                     android:padding="10dp" />
 
                 <EditText
-                    android:id="@+id/LoginPassword"
+                    android:id="@+id/loginPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -69,7 +70,7 @@
                     android:padding="10dp" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/signIn"
                     android:layout_width="match_parent"
                     android:backgroundTint="@color/black"
                     android:layout_height="wrap_content"
