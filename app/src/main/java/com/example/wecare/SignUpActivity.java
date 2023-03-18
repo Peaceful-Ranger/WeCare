@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
     TextView LoginTxt;
@@ -25,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
         passwordEdTxt = findViewById(R.id.passwordRegister);
 
         Intent intent = new Intent(getApplicationContext(), Authentication.class);
+        Intent toLogin = new Intent(getApplicationContext(), Authentication.class);
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(registerUser(email, password)){
-                    //Intent passing code comes here
+                    startActivity(toLogin);
                 }
                 //Otherwise no action
             }
@@ -52,8 +54,10 @@ public class SignUpActivity extends AppCompatActivity {
         Database db = new Database(getApplicationContext());
 
         if(db.registerUser(email, password)){
+            Toast.makeText(this, "User Registerd successfully!", Toast.LENGTH_SHORT).show();
             return true;
         }
+        Toast.makeText(this, "User already exists!", Toast.LENGTH_SHORT).show();
         return false;
     }
 

@@ -5,18 +5,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
 public class Database extends SQLiteOpenHelper {
-    private Context applicationContext;
     private static final String DATABASE_NAME = "UserInfoDB";
     public Database(@Nullable Context context){
         super(context, DATABASE_NAME, null, 1);
-        applicationContext = context;
     }
 
     private static final String TABLE_LOGIN_INFO = "LoginInfo";
@@ -26,7 +23,7 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        String query = "CREATE TABLE "+TABLE_LOGIN_INFO+" ( "+KEY_EMAIL+" TEXT PRIMARY KEY, "+KEY_PASSWORD+" TEXT)";
+        String query = "CREATE TABLE "+TABLE_LOGIN_INFO+" ( "+KEY_EMAIL+" TEXT PRIMARY KEY, "+KEY_PASSWORD+" TEXT NOT NULL)";
         sqLiteDatabase.execSQL(query);
     }
 
@@ -40,11 +37,9 @@ public class Database extends SQLiteOpenHelper {
     public boolean registerUser(String email, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         if(checkUserInfo(email, password)){
-            Toast.makeText(applicationContext, "User already exists! Try signing in", Toast.LENGTH_SHORT).show();
             return false;
         }
         if(!checkUniqueUser(email)){
-            Toast.makeText(applicationContext, "Username already taken!", Toast.LENGTH_SHORT).show();
             return false;
         }
 
@@ -54,7 +49,6 @@ public class Database extends SQLiteOpenHelper {
         values.put(KEY_PASSWORD, password);
 
         db.insert(TABLE_LOGIN_INFO, null, values);
-        Toast.makeText(applicationContext, "User registered successfully!", Toast.LENGTH_SHORT).show();
         db.close();
         return true;
     }

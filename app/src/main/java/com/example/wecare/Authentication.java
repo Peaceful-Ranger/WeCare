@@ -29,6 +29,7 @@ public class Authentication extends AppCompatActivity {
         String password = passwordEdTxt.getText().toString();
 
         Intent intent = new Intent(this, SignUpActivity.class);
+        Intent toSos = new Intent(this, SosActivity.class);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -39,26 +40,25 @@ public class Authentication extends AppCompatActivity {
         };
         registerTxt.setOnClickListener(onClickListener);
 
+
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(checkUser(email, password)){
-                    //Intent passing code comes here
+                    startActivity(toSos);
+                    Toast.makeText(Authentication.this, "User logged in successfully!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 //OtherWise no action
+                Toast.makeText(Authentication.this, "No user found! Try creating a account", Toast.LENGTH_SHORT).show();
             }
         });
     }
     public boolean checkUser(String email, String password){
         Database db = new Database(getApplicationContext());
 
-        if(db.checkUserInfo(email, password)){
-            Toast.makeText(this, "User logged in successfully!", Toast.LENGTH_SHORT).show();
-            return true;
-        } else{
-            Toast.makeText(this, "No user found! Try creating a account", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+        return db.checkUserInfo(email, password);
+
     }
 
 }
